@@ -1119,72 +1119,79 @@ input {
     letter-spacing: 0.08em;
   }
 
-  .hero-title {
-    font-size: clamp(3.6rem, 18vw, 5.8rem);
-  }
-
-  .hero-grid {
-    min-height: 100vh;
-    align-content: end;
-    padding-top: 112px;
-  }
-
-  .hero-overlay {
-    background:
-      linear-gradient(90deg, rgba(3, 7, 17, 0.94), rgba(3, 7, 17, 0.6)),
-      linear-gradient(180deg, rgba(3, 7, 17, 0.34), rgba(3, 7, 17, 0.92));
-  }
-
+  /* Switch hero to flex flow — eliminates all absolute-position collisions */
   .hero-stage {
-    min-height: 720px;
-  }
-
-  .stagger-word {
-    font-size: clamp(4.4rem, 17vw, 5.8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 92px 1.25rem 2.5rem;
+    height: 100vh;
+    height: 100svh;
+    min-height: 620px;
+    max-height: none;
+    gap: 0;
   }
 
   .hero-eyebrow {
-    top: 11%;
+    position: static;
     font-size: 0.66rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stagger-word {
+    position: static;
+    font-size: clamp(4rem, 15vw, 5.2rem);
+    line-height: 0.88;
   }
 
   .word-one {
-    top: 18%;
+    text-align: left;
   }
 
   .word-two {
-    top: 34%;
+    text-align: right;
+    margin-top: 0.1em;
   }
 
   .word-three {
-    left: 16%;
-    top: 50%;
+    padding-left: 14%;
+    margin-top: 0.1em;
   }
 
   .hero-floating-copy {
-    top: auto;
-    bottom: 7rem;
-    max-width: 260px;
-    font-size: 0.86rem;
-    line-height: 1.5;
+    position: static;
+    max-width: 100%;
+    margin-top: 1.75rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
   }
 
   .hero-action-panel {
-    bottom: 1.5rem;
+    position: static;
     flex-direction: column;
-    gap: 8px;
-    left: 1.25rem;
-    right: 1.25rem;
+    gap: 10px;
+    margin-top: 1.75rem;
   }
 
   .hero-action-panel .primary-button,
   .hero-action-panel .ghost-button {
     width: 100%;
     justify-content: center;
+    padding: 16px 22px;
   }
 
   .hero-stat {
     display: none;
+  }
+
+  .hero-bottom-fade {
+    display: none;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(3, 7, 17, 0.5) 0%, rgba(3, 7, 17, 0.1) 40%, rgba(3, 7, 17, 0.88) 80%),
+      linear-gradient(90deg, rgba(3, 7, 17, 0.72), rgba(3, 7, 17, 0.3));
   }
 
   .console-metrics,
@@ -1207,15 +1214,6 @@ input {
 
   .cta-panel {
     padding: clamp(28px, 8vw, 48px);
-  }
-
-  .faq-cta-section {
-    grid-template-columns: 1fr;
-  }
-
-  .site-footer {
-    grid-template-columns: 1fr;
-    padding: 40px 0 48px;
   }
 }
 
