@@ -145,6 +145,17 @@ input {
   object-fit: contain;
 }
 
+.brand-word {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  line-height: 1;
+}
+
 .footer-brand .brand-mark-img {
   width: 42px;
   height: 42px;
@@ -152,6 +163,10 @@ input {
 
 .footer-brand .brand-word-img {
   width: 168px;
+}
+
+.footer-brand .brand-word {
+  font-size: 1.3rem;
 }
 
 .nav-links {
@@ -1090,7 +1105,18 @@ input {
   }
 
   .brand {
-    font-size: 0.82rem;
+    padding: 8px 14px 8px 10px;
+    gap: 8px;
+  }
+
+  .brand-mark-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brand-word {
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
   }
 
   .hero-title {
@@ -1110,52 +1136,55 @@ input {
   }
 
   .hero-stage {
-    min-height: 700px;
+    min-height: 720px;
+  }
+
+  .stagger-word {
+    font-size: clamp(4.4rem, 17vw, 5.8rem);
   }
 
   .hero-eyebrow {
-    top: 17%;
+    top: 11%;
+    font-size: 0.66rem;
   }
 
   .word-one {
-    top: 24%;
+    top: 18%;
   }
 
   .word-two {
-    top: 40%;
+    top: 34%;
   }
 
   .word-three {
-    left: 18%;
-    top: 57%;
+    left: 16%;
+    top: 50%;
   }
 
   .hero-floating-copy {
-    top: 48%;
-    max-width: 250px;
+    top: auto;
+    bottom: 7rem;
+    max-width: 260px;
+    font-size: 0.86rem;
+    line-height: 1.5;
   }
 
-  .hero-stat i {
-    display: none;
-  }
-
-  .hero-stat-top {
-    top: 19%;
-    right: 1.25rem;
-  }
-
-  .hero-stat-left {
+  .hero-action-panel {
+    bottom: 1.5rem;
+    flex-direction: column;
+    gap: 8px;
     left: 1.25rem;
-    bottom: 8rem;
-  }
-
-  .hero-stat-right {
     right: 1.25rem;
-    bottom: 4rem;
   }
 
-  .hero-stat strong {
-    font-size: 2.15rem;
+  .hero-action-panel .primary-button,
+  .hero-action-panel .ghost-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stat {
+    display: none;
   }
 
   .console-metrics,
@@ -1165,6 +1194,28 @@ input {
 
   .matrix-grid {
     gap: 7px;
+  }
+
+  .glass-panel {
+    padding: 20px;
+  }
+
+  .service-card {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .cta-panel {
+    padding: clamp(28px, 8vw, 48px);
+  }
+
+  .faq-cta-section {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    padding: 40px 0 48px;
   }
 }
 
