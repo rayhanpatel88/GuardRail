@@ -1340,6 +1340,19 @@ input {
   transform-origin: center;
 }
 
+.ef-left::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 48%;
+  height: 38%;
+  background: linear-gradient(135deg, rgba(8, 18, 42, 0), rgba(8, 18, 42, 0.98) 58%, var(--navy-950));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .ef-left > * {
   position: relative;
   z-index: 1;
@@ -1657,8 +1670,12 @@ input {
   }
 
   .ef-video {
-    object-position: 36% 42%;
-    transform: scale(1.28);
+    object-position: 22% 34%;
+    transform: scale(1.65);
+  }
+
+  .ef-left::after {
+    opacity: 1;
   }
 
   .ef-tagline-wrap {
