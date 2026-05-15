@@ -97,11 +97,34 @@ function updateTicker() {
   });
 }
 
+function setupFooterWatermark() {
+  const svg = document.getElementById("efWatermarkSvg");
+  const text = document.getElementById("efWatermarkText");
+  if (!svg || !text) return;
+
+  function fit() {
+    try {
+      const bbox = text.getBBox();
+      if (bbox.width > 0) {
+        svg.setAttribute("viewBox", `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
+      }
+    } catch (e) {}
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(fit);
+  } else {
+    window.addEventListener("load", fit);
+  }
+  window.addEventListener("resize", fit);
+}
+
 setupReveal();
 setupMobileMenu();
 setupFaq();
 setupMagnetic();
 setupRiskConsole();
+setupFooterWatermark();
 updateTicker();
 
 window.addEventListener("scroll", updateTicker, { passive: true });
