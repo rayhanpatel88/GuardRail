@@ -1986,7 +1986,7 @@ body.menu-open {
 .ef-badge-arrow {
   width: 22px;
   height: 22px;
-  color: rgba(216, 221, 229, 0.45);
+  color: var(--civic-gold);
 }
 
 .ef-badge-text {
@@ -1994,7 +1994,7 @@ body.menu-open {
   font-style: italic;
   font-size: 1.1rem;
   font-weight: 600;
-  color: rgba(216, 221, 229, 0.45);
+  color: var(--civic-gold);
   white-space: nowrap;
 }
 
