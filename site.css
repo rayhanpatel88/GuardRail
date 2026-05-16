@@ -1493,6 +1493,64 @@ body.menu-open {
   text-transform: uppercase;
 }
 
+.logo-wordmark {
+  min-width: 76px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(242, 238, 230, 0.16);
+  border-radius: 12px;
+  background: rgba(242, 238, 230, 0.92);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  color: #111827;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.logo-wordmark-ibm {
+  color: transparent;
+  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  font-size: 1.18rem;
+  letter-spacing: 0.02em;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #1f5aa6 0 3px,
+      transparent 3px 5px
+    ),
+    rgba(242, 238, 230, 0.94);
+  -webkit-background-clip: text, border-box;
+  background-clip: text, border-box;
+}
+
+.logo-wordmark-kpmg {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  min-width: 86px;
+  padding: 5px;
+  background: rgba(242, 238, 230, 0.95);
+}
+
+.logo-wordmark-kpmg i {
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: #005eb8;
+  color: #fff;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.logo-wordmark-mckinsey {
+  min-width: 96px;
+  color: #173f8a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
 .logo-tile.is-featured img {
   border-radius: 0;
   background: transparent;
@@ -1500,7 +1558,7 @@ body.menu-open {
   box-shadow: none;
 }
 
-.logo-tile > span:not(.logo-mark) {
+.logo-tile > span:not(.logo-mark):not(.logo-wordmark) {
   color: rgba(242, 238, 230, 0.78);
   font-size: 0.78rem;
   font-weight: 700;
