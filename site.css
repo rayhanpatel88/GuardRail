@@ -1930,11 +1930,11 @@ body.menu-open {
   height: 96px;
   border-radius: 22px;
   transform: rotate(-10deg);
-  background: linear-gradient(135deg, var(--civic-gold) 0%, #9b6d25 58%, var(--wine) 100%);
+  background: var(--civic-gold);
   box-shadow:
-    inset 3px 3px 8px rgba(255, 255, 255, 0.22),
-    inset -3px -3px 12px rgba(0, 0, 0, 0.18),
-    8px 14px 28px rgba(214, 168, 79, 0.22);
+    inset 3px 3px 8px rgba(255, 255, 255, 0.18),
+    inset -3px -3px 10px rgba(0, 0, 0, 0.22),
+    8px 14px 28px rgba(201, 170, 98, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2050,6 +2050,16 @@ body.menu-open {
   font-weight: 500;
   color: rgba(216, 221, 229, 0.42);
   max-width: none !important;
+}
+
+.ef-legal-link {
+  color: rgba(216, 221, 229, 0.42);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ef-legal-link:hover {
+  color: var(--civic-gold);
 }
 
 .ef-cta-mini {
@@ -2229,9 +2239,12 @@ body.menu-open {
   background: linear-gradient(135deg, rgba(7, 11, 10, 0), rgba(7, 11, 10, 0.98) 58%, #070b0a);
 }
 
-.ef-badge-cube,
+.ef-badge-cube {
+  background: var(--civic-gold);
+}
+
 .ef-subscribe-btn {
-  background: linear-gradient(135deg, #5ed29c 0%, #c9aa62 100%);
+  background: var(--signal-cyan);
 }
 
 .ef-badge-mark,
