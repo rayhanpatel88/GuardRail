@@ -1185,11 +1185,120 @@ body.menu-open {
   max-width: 860px;
 }
 
+.founder-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
+  gap: clamp(18px, 4vw, 42px);
+  align-items: stretch;
+  margin-top: clamp(38px, 6vw, 70px);
+  overflow: hidden;
+  border: 1px solid rgba(242, 238, 230, 0.13);
+  background:
+    linear-gradient(120deg, rgba(94, 210, 156, 0.08), transparent 34%),
+    linear-gradient(300deg, rgba(201, 170, 98, 0.1), transparent 46%),
+    rgba(10, 17, 16, 0.74);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), 0 34px 90px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(20px);
+}
+
+.founder-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(201, 170, 98, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 210, 156, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(90deg, black, rgba(0, 0, 0, 0.42), transparent);
+  opacity: 0.48;
+}
+
+.founder-portrait-frame {
+  position: relative;
+  min-height: clamp(420px, 48vw, 620px);
+  overflow: hidden;
+  background: #070b0a;
+}
+
+.founder-portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(7, 11, 10, 0.08) 58%, rgba(7, 11, 10, 0.52) 100%),
+    linear-gradient(180deg, transparent 56%, rgba(7, 11, 10, 0.56) 100%);
+}
+
+.founder-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.9) contrast(1.04);
+}
+
+.founder-quote-panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(420px, 48vw, 620px);
+  padding: clamp(30px, 6vw, 74px);
+}
+
+.founder-quote-kicker {
+  color: rgba(94, 210, 156, 0.82);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.founder-quote-panel blockquote {
+  margin-top: 24px;
+}
+
+.founder-quote-panel p {
+  max-width: 720px;
+  color: var(--parchment);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.35rem, 5.1vw, 5.65rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.founder-quote-panel cite {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+  color: rgba(242, 238, 230, 0.72);
+  font-size: 0.92rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founder-quote-panel cite::before {
+  content: "";
+  width: 46px;
+  height: 1px;
+  background: linear-gradient(90deg, #5ed29c, rgba(201, 170, 98, 0.68));
+}
+
 .founder-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 58px;
+  margin-top: clamp(18px, 3vw, 28px);
 }
 
 .founder-card {
@@ -1495,6 +1604,29 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
+  .founder-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-portrait-frame,
+  .founder-quote-panel {
+    min-height: auto;
+  }
+
+  .founder-portrait-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .founder-portrait-frame::after {
+    background:
+      linear-gradient(180deg, transparent 62%, rgba(7, 11, 10, 0.7) 100%),
+      linear-gradient(90deg, rgba(7, 11, 10, 0.08), transparent 42%, rgba(7, 11, 10, 0.1));
+  }
+
+  .founder-quote-panel {
+    padding-top: 0;
+  }
+
   .founder-card-large {
     grid-column: auto;
   }
@@ -1665,6 +1797,37 @@ body.menu-open {
 
   .glass-panel {
     padding: 20px;
+  }
+
+  .founder-feature {
+    margin-top: 34px;
+  }
+
+  .founder-portrait-frame {
+    aspect-ratio: 3 / 4;
+  }
+
+  .founder-quote-panel {
+    padding: 0 22px 28px;
+  }
+
+  .founder-quote-panel blockquote {
+    margin-top: 18px;
+  }
+
+  .founder-quote-panel p {
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
+    line-height: 1;
+  }
+
+  .founder-quote-panel cite {
+    margin-top: 20px;
+    font-size: 0.78rem;
+    gap: 10px;
+  }
+
+  .founder-quote-panel cite::before {
+    width: 34px;
   }
 
   .service-card {
