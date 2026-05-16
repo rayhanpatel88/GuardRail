@@ -21,7 +21,7 @@ const services = [
     title: "Data Transparency Frameworks",
     summary: "Enforcing open, ethical, compliant data pipelines across the enterprise.",
     detail:
-      "GUARDRAIL maps lineage, consent, retention, access, and transformation logic into a transparent operating model that makes data accountability inspectable.",
+      "Govtelligence maps lineage, consent, retention, access, and transformation logic into a transparent operating model that makes data accountability inspectable.",
     metric: "94%",
     metricLabel: "lineage coverage",
     rows: ["Source-to-output lineage", "Consent and retention logic", "Explainability documentation"],

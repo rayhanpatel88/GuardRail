@@ -7,9 +7,9 @@ import { useRef, useState } from "react";
 const easeLuxury: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const headlineLines = [
-  "Navigating the Gray",
-  "Area of AI",
-  "Infrastructure.",
+  "Govtelligence",
+  "for AI",
+  "Oversight.",
 ];
 
 const navItems = ["Services", "Insights", "Frameworks"];
@@ -213,12 +213,12 @@ export default function GuardrailHero() {
           <a
             href="#"
             className="group flex items-center gap-3 text-sm font-semibold tracking-[0.22em] text-white no-underline"
-            aria-label="GUARDRAIL home"
+            aria-label="Govtelligence home"
           >
             <span className="grid h-8 w-8 place-items-center border border-white/[0.18] text-[0.72rem] tracking-[-0.03em] transition-colors duration-500 ease-premium group-hover:border-white/[0.42]">
               G
             </span>
-            <span>GUARDRAIL</span>
+            <span>GOVTELLIGENCE</span>
           </a>
 
           <div className="hidden items-center gap-10 lg:flex">
@@ -236,7 +236,7 @@ export default function GuardrailHero() {
             strength={0.14}
             className="hidden min-h-11 items-center border border-white/[0.12] px-5 text-sm font-semibold text-white/[0.82] transition-colors duration-500 ease-premium hover:border-white/[0.28] hover:bg-white/[0.045] lg:inline-flex"
           >
-            <span>Request Governance Assessment</span>
+            <span>Request Intelligence Briefing</span>
           </MagneticButton>
         </nav>
       </motion.header>
@@ -278,7 +278,7 @@ export default function GuardrailHero() {
             className="mt-10 grid gap-8 border-t border-white/10 pt-8 md:grid-cols-[minmax(0,0.78fr)_minmax(12rem,0.22fr)]"
           >
             <p className="premium-copy max-w-2xl text-lg">
-              GUARDRAIL provides enterprise-grade AI audits, data transparency
+              Govtelligence provides enterprise-grade AI audits, data transparency
               frameworks, and compliance strategies for forward-thinking
               organizations.
             </p>

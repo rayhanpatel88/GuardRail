@@ -1,13 +1,13 @@
-# GUARDRAIL Styling Foundations
+# Govtelligence Styling Foundations
 
-This workspace contains the global styling foundation for the GUARDRAIL website:
+This workspace contains the global styling foundation for the Govtelligence website:
 
 - `tailwind.config.ts` defines the brand palette, typography scale, layout spacing, hairline borders, and premium utility tokens.
 - `src/styles/globals.css` provides CSS variables, global type treatment, page background, and reusable composition classes for vault-like enterprise pages.
 - `src/components/GuardrailHero.tsx` provides the animated React/Tailwind/Framer Motion hero section.
 - `src/components/ServicesAuditsSection.tsx` provides the sticky-scroll services and audits section.
 
-The visual system is intentionally restrained: midnight navy, crisp white, slate, silver, platinum, generous whitespace, editorial typography, and ultra-thin dividers.
+The visual system is intentionally institutional: midnight navy, parchment, civic gold, signal cyan, restrained whitespace, editorial typography, and ultra-thin dividers.
 
 Use the hero in a React or Next.js app with:
 

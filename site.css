@@ -3,6 +3,11 @@
   --navy-900: #08101f;
   --navy-850: #0b1424;
   --navy-800: #0d1a2e;
+  --civic-gold: #d6a84f;
+  --civic-gold-soft: rgba(214, 168, 79, 0.24);
+  --signal-cyan: #7dd3fc;
+  --wine: #702f46;
+  --parchment: #f3ead7;
   --ink: #f8fafc;
   --muted: #9aa7b8;
   --slate: #64748b;
@@ -45,11 +50,31 @@ input {
 }
 
 .site-shell {
+  position: relative;
   min-height: 100vh;
   overflow-x: clip;
   background:
-    radial-gradient(circle at 18% 12%, rgba(100, 116, 139, 0.16), transparent 28rem),
+    linear-gradient(115deg, rgba(214, 168, 79, 0.11), transparent 24%),
     linear-gradient(180deg, var(--navy-950), #06101d 42%, var(--navy-950));
+}
+
+.site-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(214, 168, 79, 0.055) 1px, transparent 1px),
+    linear-gradient(rgba(125, 211, 252, 0.04) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 76%, transparent 100%);
+  opacity: 0.5;
+}
+
+.site-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-section {
@@ -83,9 +108,10 @@ input {
   z-index: -2;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(3, 7, 17, 0.9), rgba(3, 7, 17, 0.48) 45%, rgba(3, 7, 17, 0.24) 78%),
+    linear-gradient(90deg, rgba(3, 7, 17, 0.93), rgba(3, 7, 17, 0.52) 45%, rgba(3, 7, 17, 0.28) 78%),
     linear-gradient(180deg, rgba(3, 7, 17, 0.34), rgba(3, 7, 17, 0.06) 42%, rgba(3, 7, 17, 0.96)),
-    radial-gradient(circle at 74% 46%, rgba(216, 221, 229, 0.13), transparent 30rem);
+    linear-gradient(135deg, transparent 52%, rgba(112, 47, 70, 0.28)),
+    radial-gradient(circle at 74% 46%, rgba(214, 168, 79, 0.16), transparent 30rem);
 }
 
 .hero-overlay::after {
@@ -93,8 +119,8 @@ input {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(214, 168, 79, 0.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.06) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: linear-gradient(to bottom, transparent 0%, black 22%, black 72%, transparent 100%);
   opacity: 0.35;
@@ -119,13 +145,14 @@ input {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(214, 168, 79, 0.28);
   border-radius: 999px;
-  background: rgba(5, 11, 20, 0.72);
+  background: linear-gradient(135deg, rgba(5, 11, 20, 0.84), rgba(13, 26, 46, 0.72));
   padding: 9px 18px 9px 12px;
   backdrop-filter: blur(22px);
   color: var(--ink);
   min-width: 0;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .brand img {
@@ -136,7 +163,11 @@ input {
 .brand-mark-img {
   width: 36px;
   height: 36px;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: 50% 36%;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 168, 79, 0.32);
+  background: var(--navy-950);
 }
 
 .brand-word-img {
@@ -147,11 +178,10 @@ input {
 
 .brand-word {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.05rem;
+  font-size: 1.14rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
+  letter-spacing: 0.015em;
+  color: var(--parchment);
   white-space: nowrap;
   line-height: 1;
 }
@@ -210,7 +240,7 @@ input {
 
 .nav-cta,
 .primary-button {
-  background: var(--ink);
+  background: linear-gradient(135deg, var(--parchment), var(--civic-gold));
   color: var(--navy-950);
   font-size: 0.84rem;
   font-weight: 700;
@@ -218,7 +248,7 @@ input {
 
 .nav-cta {
   padding: 11px 17px;
-  background: rgba(248, 250, 252, 0.94);
+  background: linear-gradient(135deg, rgba(243, 234, 215, 0.96), rgba(214, 168, 79, 0.94));
   backdrop-filter: blur(18px);
 }
 
@@ -230,7 +260,7 @@ input {
 .primary-button:hover,
 .footer-form button:hover {
   transform: translateY(-2px);
-  background: #ffffff;
+  background: var(--parchment);
 }
 
 .ghost-button {
@@ -322,11 +352,65 @@ input {
   position: absolute;
   left: clamp(1.5rem, 3vw, 4rem);
   top: 18%;
-  color: rgba(216, 221, 229, 0.72);
+  color: rgba(243, 234, 215, 0.8);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.hero-words-group {
+  position: absolute;
+  z-index: 3;
+  left: clamp(1.25rem, 3vw, 4rem);
+  right: clamp(1.25rem, 4vw, 5rem);
+  top: 26%;
+  display: grid;
+  gap: 18px;
+}
+
+.hero-crest {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(214, 168, 79, 0.32);
+  background: rgba(5, 11, 20, 0.62);
+  padding: 8px 14px 8px 8px;
+  backdrop-filter: blur(18px);
+  color: rgba(243, 234, 215, 0.78);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-crest img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  object-position: 50% 36%;
+  border-radius: 999px;
+}
+
+.hero-brand-title {
+  max-width: min-content;
+  color: var(--parchment);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(5rem, 13.2vw, 14rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.82;
+  text-shadow: 0 22px 90px rgba(0, 0, 0, 0.54);
+}
+
+.hero-brand-title::after {
+  content: "";
+  display: block;
+  width: min(34vw, 420px);
+  height: 2px;
+  margin-top: 28px;
+  background: linear-gradient(90deg, var(--civic-gold), rgba(125, 211, 252, 0.54), transparent);
 }
 
 .stagger-word {
@@ -362,9 +446,9 @@ input {
   position: absolute;
   z-index: 4;
   left: clamp(1.5rem, 3vw, 4rem);
-  top: 48%;
-  max-width: 310px;
-  color: rgba(248, 250, 252, 0.86);
+  top: 66%;
+  max-width: 460px;
+  color: rgba(243, 234, 215, 0.88);
   font-size: clamp(0.94rem, 1.15vw, 1.08rem);
   line-height: 1.55;
 }
@@ -470,7 +554,7 @@ input {
 
 .eyebrow,
 .section-kicker {
-  color: rgba(216, 221, 229, 0.74);
+  color: rgba(214, 168, 79, 0.86);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -483,7 +567,7 @@ input {
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   letter-spacing: -0.04em;
-  color: var(--ink);
+  color: var(--parchment);
 }
 
 .hero-title {
@@ -500,7 +584,7 @@ input {
   width: 92px;
   height: 1px;
   margin-top: 28px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.72), transparent);
+  background: linear-gradient(90deg, var(--civic-gold), rgba(125, 211, 252, 0.46), transparent);
 }
 
 .hero-subtitle,
@@ -540,7 +624,8 @@ input {
   overflow: hidden;
   border: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.024)),
+    linear-gradient(135deg, rgba(214, 168, 79, 0.07), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.024)),
     rgba(8, 16, 31, 0.72);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), 0 28px 80px rgba(0, 0, 0, 0.26);
   backdrop-filter: blur(20px);
@@ -708,7 +793,7 @@ input {
 .service-card h3,
 .framework-card h3 {
   margin-top: 16px;
-  color: var(--ink);
+  color: var(--parchment);
   font-size: clamp(1.35rem, 2vw, 2rem);
   font-weight: 500;
   letter-spacing: -0.03em;
@@ -735,6 +820,20 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.service-card::before,
+.framework-card::before,
+.founder-card::before,
+.faq-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  right: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--civic-gold), transparent);
+  opacity: 0.72;
 }
 
 .service-card::after,
@@ -884,7 +983,7 @@ input {
 
 .signal-bars i {
   flex: 1;
-  background: linear-gradient(180deg, rgba(248, 250, 252, 0.55), rgba(248, 250, 252, 0.05));
+  background: linear-gradient(180deg, rgba(214, 168, 79, 0.8), rgba(125, 211, 252, 0.08));
 }
 
 .signal-bars i:nth-child(1) { height: 42%; }
@@ -902,7 +1001,8 @@ input {
 .cta-panel {
   padding: clamp(36px, 6vw, 72px);
   background:
-    radial-gradient(circle at 20% 20%, rgba(216, 221, 229, 0.18), transparent 24rem),
+    linear-gradient(135deg, rgba(214, 168, 79, 0.18), transparent 42%),
+    linear-gradient(315deg, rgba(112, 47, 70, 0.28), transparent 54%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
 }
 
@@ -1115,8 +1215,8 @@ input {
   }
 
   .brand-word {
-    font-size: 0.88rem;
-    letter-spacing: 0.08em;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
   }
 
   /* Switch hero to flex flow — distributes content evenly across full viewport height */
@@ -1138,8 +1238,34 @@ input {
   }
 
   .hero-words-group {
+    position: static;
     display: flex;
     flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-crest {
+    max-width: 100%;
+    gap: 10px;
+    padding: 7px 11px 7px 7px;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-crest img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero-brand-title {
+    max-width: 100%;
+    font-size: clamp(3rem, 14vw, 4.55rem);
+    line-height: 0.86;
+  }
+
+  .hero-brand-title::after {
+    width: 72%;
+    margin-top: 18px;
   }
 
   .stagger-word {
@@ -1248,7 +1374,7 @@ input {
   inset: 0;
   border-radius: 40px;
   background: var(--fc-grad);
-  opacity: 0.5;
+  opacity: 0.34;
   filter: blur(45px);
   pointer-events: none;
   z-index: 0;
@@ -1260,7 +1386,7 @@ input {
   border-radius: 40px;
   border: 8px solid transparent;
   background:
-    linear-gradient(var(--navy-850), var(--navy-850)) padding-box,
+    linear-gradient(145deg, rgba(11, 20, 36, 0.98), rgba(8, 16, 31, 0.94)) padding-box,
     var(--fc-grad) border-box;
   flex: 1;
 }
@@ -1279,7 +1405,7 @@ input {
 }
 
 .fc-title {
-  color: white;
+  color: var(--parchment);
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: -0.04em;
@@ -1298,7 +1424,9 @@ input {
 
 .enhanced-footer {
   padding: 80px 0 0;
-  background: var(--navy-950);
+  background:
+    linear-gradient(180deg, rgba(112, 47, 70, 0.12), transparent 34%),
+    var(--navy-950);
 }
 
 .ef-wrapper {
@@ -1367,20 +1495,19 @@ input {
 .ef-logo-mark {
   width: 32px;
   height: 32px;
-  object-fit: contain;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1.5px solid rgba(255, 255, 255, 0.7);
-  padding: 2px;
+  object-fit: cover;
+  object-position: 50% 36%;
+  border-radius: 999px;
+  background: var(--navy-950);
+  border: 1.5px solid rgba(214, 168, 79, 0.72);
 }
 
 .ef-logo-name {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.95rem;
+  font-size: 1.08rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: white;
+  letter-spacing: 0.02em;
+  color: var(--parchment);
   white-space: nowrap;
 }
 
@@ -1474,11 +1601,11 @@ input {
   height: 96px;
   border-radius: 22px;
   transform: rotate(-10deg);
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 55%, #1e40af 100%);
+  background: linear-gradient(135deg, var(--civic-gold) 0%, #9b6d25 58%, var(--wine) 100%);
   box-shadow:
     inset 3px 3px 8px rgba(255, 255, 255, 0.22),
     inset -3px -3px 12px rgba(0, 0, 0, 0.18),
-    8px 14px 28px rgba(20, 72, 200, 0.4);
+    8px 14px 28px rgba(214, 168, 79, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1488,7 +1615,7 @@ input {
   font-family: "Cormorant Garamond", serif;
   font-size: 44px;
   font-weight: 700;
-  color: white;
+  color: var(--navy-950);
   letter-spacing: -0.04em;
   transform: rotate(10deg);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
@@ -1619,7 +1746,7 @@ input {
 
 .ef-subscribe-btn {
   padding: 11px 22px;
-  background: white;
+  background: linear-gradient(135deg, var(--parchment), var(--civic-gold));
   color: var(--navy-950);
   font-size: 0.84rem;
   font-weight: 700;
