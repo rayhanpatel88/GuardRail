@@ -230,13 +230,7 @@ input {
 }
 
 .nav-actions {
-  grid-column: 3;
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0;
-  min-width: 0;
+  display: none;
 }
 
 .nav-links {
@@ -324,15 +318,24 @@ input {
 }
 
 .menu-button {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-column: 3;
   justify-self: end;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.04);
   cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: border-color 240ms ease, background 240ms ease;
+}
+
+.menu-button:hover {
+  border-color: rgba(201, 170, 98, 0.35);
+  background: rgba(201, 170, 98, 0.06);
 }
 
 .menu-button span {
@@ -1455,10 +1458,6 @@ body.menu-open {
 }
 
 @media (max-width: 1060px) {
-  .nav-actions {
-    display: none;
-  }
-
   .nav-shell {
     grid-template-columns: 42px minmax(0, 1fr) 42px;
     width: min(100% - 24px, 1240px);
@@ -1472,7 +1471,8 @@ body.menu-open {
   }
 
   .menu-button {
-    display: block;
+    width: 40px;
+    height: 40px;
   }
 
   .hero-intel-console {
