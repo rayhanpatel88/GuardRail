@@ -98,9 +98,10 @@ input {
 .hero-video {
   z-index: -3;
   object-fit: cover;
+  object-position: 42% 46%;
   opacity: 0.62;
   filter: saturate(0.36) contrast(1.1) brightness(0.82);
-  transform: scale(1.045);
+  transform: scale(1.16);
   transform-origin: center;
 }
 
@@ -110,6 +111,7 @@ input {
   background:
     linear-gradient(90deg, rgba(3, 7, 17, 0.93), rgba(3, 7, 17, 0.52) 45%, rgba(3, 7, 17, 0.28) 78%),
     linear-gradient(180deg, rgba(3, 7, 17, 0.34), rgba(3, 7, 17, 0.06) 42%, rgba(3, 7, 17, 0.96)),
+    radial-gradient(ellipse at 96% 96%, rgba(3, 7, 17, 0.98) 0 12rem, rgba(3, 7, 17, 0.74) 16rem, transparent 26rem),
     linear-gradient(135deg, transparent 52%, rgba(112, 47, 70, 0.28)),
     radial-gradient(circle at 74% 46%, rgba(214, 168, 79, 0.16), transparent 30rem);
 }
@@ -1306,6 +1308,7 @@ input {
   .hero-overlay {
     background:
       linear-gradient(180deg, rgba(3, 7, 17, 0.5) 0%, rgba(3, 7, 17, 0.1) 40%, rgba(3, 7, 17, 0.88) 80%),
+      radial-gradient(ellipse at 96% 96%, rgba(3, 7, 17, 1) 0 8rem, rgba(3, 7, 17, 0.78) 12rem, transparent 19rem),
       linear-gradient(90deg, rgba(3, 7, 17, 0.72), rgba(3, 7, 17, 0.3));
   }
 
@@ -1447,12 +1450,13 @@ input {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 42% 44%;
   z-index: 0;
   pointer-events: none;
   opacity: 0.48;
   filter: saturate(0.25) contrast(1.1) brightness(0.65);
   transform-origin: center;
+  transform: scale(1.24);
 }
 
 .ef-left::after {
@@ -1463,7 +1467,7 @@ input {
   width: 48%;
   height: 38%;
   background: linear-gradient(135deg, rgba(8, 18, 42, 0), rgba(8, 18, 42, 0.98) 58%, var(--navy-950));
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   z-index: 0;
 }
@@ -1780,12 +1784,8 @@ input {
   }
 
   .ef-video {
-    object-position: 22% 34%;
-    transform: scale(1.65);
-  }
-
-  .ef-left::after {
-    opacity: 1;
+    object-position: 28% 36%;
+    transform: scale(1.78);
   }
 
   .ef-tagline-wrap {
