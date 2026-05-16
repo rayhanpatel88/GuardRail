@@ -162,14 +162,16 @@ input {
   z-index: 40;
   width: min(100% - 32px, 1240px);
   padding: 28px 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 18px;
   pointer-events: auto;
 }
 
 .brand {
+  grid-column: 2;
+  justify-self: center;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -219,6 +221,8 @@ input {
 }
 
 .nav-links {
+  grid-column: 1;
+  justify-self: start;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -270,6 +274,8 @@ input {
 }
 
 .nav-cta {
+  grid-column: 3;
+  justify-self: end;
   padding: 11px 17px;
   background: #5ed29c;
 }
@@ -303,6 +309,8 @@ input {
 
 .menu-button {
   display: none;
+  grid-column: 3;
+  justify-self: end;
   width: 42px;
   height: 42px;
   border: 1px solid var(--line);
@@ -389,6 +397,7 @@ body.menu-open {
   position: relative;
   width: 200px;
   height: 200px;
+  margin-bottom: clamp(34px, 6vh, 64px);
   padding: 21px;
   transform: translateY(-50px);
   background: rgba(255, 255, 255, 0.01);
@@ -445,7 +454,7 @@ body.menu-open {
 
 .hero-copy-block {
   max-width: 720px;
-  margin-top: -26px;
+  margin-top: 0;
 }
 
 .hero-eyebrow {
@@ -1277,6 +1286,14 @@ body.menu-open {
     display: none;
   }
 
+  .nav-shell {
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+  }
+
+  .brand {
+    grid-column: 2;
+  }
+
   .menu-button {
     display: block;
   }
@@ -1410,12 +1427,13 @@ body.menu-open {
   .liquid-card {
     width: 176px;
     height: 176px;
+    margin-bottom: 24px;
     padding: 18px;
-    transform: translateY(-34px);
+    transform: translateY(-18px);
   }
 
   .hero-copy-block {
-    margin-top: -8px;
+    margin-top: 0;
   }
 
   .hero-main-title {
@@ -1593,13 +1611,13 @@ body.menu-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 42% 44%;
+  object-position: center;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.48;
-  filter: saturate(0.25) contrast(1.1) brightness(0.65);
+  opacity: 0.52;
+  filter: hue-rotate(38deg) saturate(0.72) contrast(1.16) brightness(0.5);
   transform-origin: center;
-  transform: scale(1.24);
+  transform: scale(1.18);
 }
 
 .ef-left::after {
@@ -1927,8 +1945,8 @@ body.menu-open {
   }
 
   .ef-video {
-    object-position: 28% 36%;
-    transform: scale(1.78);
+    object-position: center;
+    transform: scale(1.46);
   }
 
   .ef-tagline-wrap {
