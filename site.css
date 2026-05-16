@@ -1467,156 +1467,14 @@ body.menu-open {
 .logo-tile img,
 .credential-list img,
 .cert-grid img {
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
-  border-radius: 12px;
-  background: rgba(242, 238, 230, 0.92);
-  padding: 7px;
+  border-radius: 14px;
+  background: rgba(248, 246, 239, 0.96);
+  padding: 9px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
-
-.logo-mark {
-  width: 44px;
-  height: 44px;
-  display: inline-grid;
-  place-items: center;
-  border: 1px solid rgba(94, 210, 156, 0.28);
-  border-radius: 12px;
-  background: rgba(7, 11, 10, 0.82);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), 0 10px 28px rgba(0, 0, 0, 0.22);
-  color: rgba(242, 238, 230, 0.9);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.logo-wordmark {
-  width: min(100%, 126px);
-  min-width: 0;
-  height: 48px;
-  display: inline-grid;
-  place-items: center;
-  border: 1px solid color-mix(in srgb, var(--logo-fg, #111827) 18%, transparent);
-  border-radius: 8px;
-  background: var(--logo-bg, rgba(242, 238, 230, 0.92));
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
-  color: var(--logo-fg, #111827);
-  padding: 0 10px;
-  text-align: center;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  text-wrap: balance;
-  font-family: var(--logo-font, "Plus Jakarta Sans", "Inter", system-ui, sans-serif);
-  font-size: clamp(0.64rem, 0.78vw, 0.84rem);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: var(--logo-spacing, 0);
-  text-transform: var(--logo-transform, none);
-  position: relative;
-  isolation: isolate;
-}
-
-.logo-wordmark::after {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 7px;
-  height: 2px;
-  background: currentColor;
-  opacity: var(--logo-rule-opacity, 0);
-}
-
-.logo-wordmark-ibm {
-  color: transparent;
-  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  font-size: 1.18rem;
-  letter-spacing: 0.02em;
-  width: 86px;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      #1f5aa6 0 3px,
-      transparent 3px 5px
-    ),
-    rgba(242, 238, 230, 0.94);
-  -webkit-background-clip: text, border-box;
-  background-clip: text, border-box;
-}
-
-.logo-wordmark-kpmg {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  width: 86px;
-  padding: 5px;
-  background: rgba(242, 238, 230, 0.95);
-}
-
-.logo-wordmark-kpmg i {
-  height: 30px;
-  display: grid;
-  place-items: center;
-  background: #005eb8;
-  color: #fff;
-  font-size: 0.78rem;
-  font-style: normal;
-  font-weight: 900;
-}
-
-.logo-wordmark-mckinsey {
-  width: 112px;
-  color: #173f8a;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.02rem;
-  letter-spacing: -0.02em;
-  text-transform: none;
-}
-
-.logo-cloud .logo-tile:nth-child(1) .logo-wordmark { --logo-bg: #0b0f14; --logo-fg: #fff; --logo-rule-opacity: 0.85; }
-.logo-cloud .logo-tile:nth-child(3) .logo-wordmark { --logo-bg: #111827; --logo-fg: #f9fafb; --logo-transform: uppercase; --logo-spacing: 0.04em; }
-.logo-cloud .logo-tile:nth-child(4) .logo-wordmark { --logo-bg: #241446; --logo-fg: #fff; }
-.logo-cloud .logo-tile:nth-child(5) .logo-wordmark { --logo-bg: #f7f1e3; --logo-fg: #1b1b1b; --logo-font: Georgia, "Times New Roman", serif; }
-.logo-cloud .logo-tile:nth-child(6) .logo-wordmark { --logo-bg: #111827; --logo-fg: #fff; --logo-transform: uppercase; --logo-spacing: 0.03em; }
-.logo-cloud .logo-tile:nth-child(7) .logo-wordmark { --logo-bg: #062b43; --logo-fg: #fff; --logo-transform: uppercase; --logo-spacing: 0.06em; }
-.logo-cloud .logo-tile:nth-child(8) .logo-wordmark { --logo-bg: #0f172a; --logo-fg: #7dd3fc; }
-.logo-cloud .logo-tile:nth-child(9) .logo-wordmark { --logo-bg: #eafff7; --logo-fg: #075f4f; }
-.logo-cloud .logo-tile:nth-child(10) .logo-wordmark { --logo-bg: #f3e8ff; --logo-fg: #4c1d95; }
-.logo-cloud .logo-tile:nth-child(11) .logo-wordmark { --logo-bg: #fef3c7; --logo-fg: #f56400; --logo-font: Georgia, "Times New Roman", serif; }
-.logo-cloud .logo-tile:nth-child(12) .logo-wordmark { --logo-bg: linear-gradient(135deg, #833ab4, #fd1d1d 52%, #fcb045); --logo-fg: #fff; }
-.logo-cloud .logo-tile:nth-child(13) .logo-wordmark { --logo-bg: #e6fffa; --logo-fg: #047481; }
-.logo-cloud .logo-tile:nth-child(14) .logo-wordmark { --logo-bg: #ff2f92; --logo-fg: #fff; --logo-transform: lowercase; }
-.logo-cloud .logo-tile:nth-child(15) .logo-wordmark { --logo-bg: #eef2ff; --logo-fg: #1e1b4b; }
-.logo-cloud .logo-tile:nth-child(16) .logo-wordmark { --logo-bg: #111827; --logo-fg: #fff; }
-.logo-cloud .logo-tile:nth-child(17) .logo-wordmark { --logo-bg: #fff7ed; --logo-fg: #e53238; --logo-font: Georgia, "Times New Roman", serif; }
-.logo-cloud .logo-tile:nth-child(18) .logo-wordmark { --logo-bg: #f8fafc; --logo-fg: #0f172a; --logo-font: Georgia, "Times New Roman", serif; }
-.logo-cloud .logo-tile:nth-child(19) .logo-wordmark { --logo-bg: #111827; --logo-fg: #5eead4; }
-.logo-cloud .logo-tile:nth-child(20) .logo-wordmark { --logo-bg: #f8fafc; --logo-fg: #173f8a; --logo-font: Georgia, "Times New Roman", serif; }
-.logo-cloud .logo-tile:nth-child(21) .logo-wordmark { --logo-bg: #111827; --logo-fg: #f9fafb; --logo-transform: uppercase; --logo-spacing: 0.06em; }
-.logo-cloud .logo-tile:nth-child(22) .logo-wordmark { --logo-bg: #14a800; --logo-fg: #fff; }
-.logo-cloud .logo-tile:nth-child(23) .logo-wordmark { --logo-bg: #f7f0e6; --logo-fg: #17473e; --logo-font: Georgia, "Times New Roman", serif; }
-.logo-cloud .logo-tile:nth-child(24) .logo-wordmark { --logo-bg: #0c0c0d; --logo-fg: #fff; }
-.logo-cloud .logo-tile:nth-child(25) .logo-wordmark { --logo-bg: #eef2ff; --logo-fg: #3730a3; }
-.logo-cloud .logo-tile:nth-child(26) .logo-wordmark { --logo-bg: #95bf47; --logo-fg: #102a12; --logo-font: Georgia, "Times New Roman", serif; }
-.logo-cloud .logo-tile:nth-child(27) .logo-wordmark { --logo-bg: #1dbf73; --logo-fg: #fff; --logo-transform: lowercase; }
-.logo-cloud .logo-tile:nth-child(28) .logo-wordmark { --logo-bg: #29b2fe; --logo-fg: #fff; }
-.logo-cloud .logo-tile:nth-child(29) .logo-wordmark { --logo-bg: #0f172a; --logo-fg: #22c55e; }
-.logo-cloud .logo-tile:nth-child(30) .logo-wordmark { --logo-bg: #e4003b; --logo-fg: #fff; }
-
-.credential-list a:nth-child(1) .logo-wordmark { --logo-bg: #43156b; --logo-fg: #fff; --logo-font: Georgia, "Times New Roman", serif; }
-.credential-list a:nth-child(2) .logo-wordmark { --logo-bg: #d71920; --logo-fg: #fff; --logo-transform: uppercase; --logo-spacing: 0.02em; }
-
-.cert-grid a:nth-child(1) .logo-wordmark { --logo-bg: #232f3e; --logo-fg: #ff9900; --logo-transform: uppercase; --logo-rule-opacity: 0.75; }
-.cert-grid a:nth-child(4) .logo-wordmark { --logo-bg: #fff; --logo-fg: #4285f4; --logo-font: Georgia, "Times New Roman", serif; }
-.cert-grid a:nth-child(5) .logo-wordmark { --logo-bg: #0a66c2; --logo-fg: #fff; }
-.cert-grid a:nth-child(6) .logo-wordmark { --logo-bg: #201c4f; --logo-fg: #fff; --logo-transform: uppercase; }
-.cert-grid a:nth-child(7) .logo-wordmark { --logo-bg: #f5de00; --logo-fg: #111827; --logo-transform: uppercase; --logo-spacing: 0.04em; }
-.cert-grid a:nth-child(9) .logo-wordmark { --logo-bg: #111827; --logo-fg: #fff; --logo-font: Georgia, "Times New Roman", serif; }
-.cert-grid a:nth-child(10) .logo-wordmark { --logo-bg: #eef2ff; --logo-fg: #1e3a8a; --logo-font: Georgia, "Times New Roman", serif; }
-.cert-grid a:nth-child(11) .logo-wordmark { --logo-bg: #111827; --logo-fg: #fbbf24; }
-.cert-grid a:nth-child(12) .logo-wordmark { --logo-bg: #101f46; --logo-fg: #fff; --logo-font: Georgia, "Times New Roman", serif; }
 
 .logo-tile.is-featured img {
   border-radius: 0;
@@ -1625,7 +1483,7 @@ body.menu-open {
   box-shadow: none;
 }
 
-.logo-tile > span:not(.logo-mark):not(.logo-wordmark) {
+.logo-tile > span {
   color: rgba(242, 238, 230, 0.78);
   font-size: 0.78rem;
   font-weight: 700;
