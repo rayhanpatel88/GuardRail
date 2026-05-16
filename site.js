@@ -139,6 +139,85 @@ function setupFooterWatermark() {
   window.addEventListener("resize", fit);
 }
 
+function setupPricingCalculator() {
+  if (!document.getElementById("pricing")) return;
+
+  const state = { serviceType: "both", models: 5, training: false, monitoring: false, timeline: "standard" };
+
+  function calcGovtelligence() {
+    const cfg = {
+      audit:      { base: 1000, perModel: 500 },
+      regulatory: { base: 800,  perModel: 400 },
+      both:       { base: 1500, perModel: 800  },
+    };
+    const { base, perModel } = cfg[state.serviceType];
+    let total = base + (state.models - 1) * perModel;
+    if (state.training)              total += state.models * 150;
+    if (state.monitoring)            total += state.models * 200;
+    if (state.timeline === "urgent") total += state.models * 100;
+    if (state.timeline === "priority") total += state.models * 50;
+    return Math.max(total, base);
+  }
+
+  function calcBigFour() {
+    const perModel = state.serviceType === "both" ? 8000 : 4000;
+    return 25000 + (state.models - 1) * perModel;
+  }
+
+  function calcBoutique() {
+    const perModel = state.serviceType === "both" ? 3000 : 1500;
+    return 8000 + (state.models - 1) * perModel;
+  }
+
+  function fmt(n) { return "$" + n.toLocaleString(); }
+
+  function render() {
+    document.getElementById("calcGuardrailPrice").textContent = fmt(calcGovtelligence());
+    document.getElementById("calcBigFourPrice").textContent   = fmt(calcBigFour());
+    document.getElementById("calcBoutiquePrice").textContent  = fmt(calcBoutique());
+    document.getElementById("calcModelCount").textContent     = state.models;
+    const pct = ((state.models - 1) / 19) * 100;
+    document.getElementById("calcSlider").style.setProperty("--progress", pct + "%");
+  }
+
+  document.querySelectorAll("#calcServiceType .calc-radio-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      document.querySelectorAll("#calcServiceType .calc-radio-item").forEach((el) => el.classList.remove("is-selected"));
+      item.classList.add("is-selected");
+      state.serviceType = item.dataset.value;
+      render();
+    });
+  });
+
+  document.getElementById("calcSlider").addEventListener("input", (e) => {
+    state.models = parseInt(e.target.value, 10);
+    render();
+  });
+
+  document.getElementById("calcTraining").addEventListener("click", () => {
+    state.training = !state.training;
+    document.getElementById("calcTraining").classList.toggle("is-checked", state.training);
+    render();
+  });
+
+  document.getElementById("calcMonitoring").addEventListener("click", () => {
+    state.monitoring = !state.monitoring;
+    document.getElementById("calcMonitoring").classList.toggle("is-checked", state.monitoring);
+    render();
+  });
+
+  document.querySelectorAll("#calcTimeline .calc-radio-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      document.querySelectorAll("#calcTimeline .calc-radio-item").forEach((el) => el.classList.remove("is-selected"));
+      item.classList.add("is-selected");
+      state.timeline = item.dataset.value;
+      render();
+    });
+  });
+
+  render();
+}
+
 setupReveal();
 setupHeroVideo();
 setupMobileMenu();
@@ -146,6 +225,7 @@ setupFaq();
 setupMagnetic();
 setupRiskConsole();
 setupFooterWatermark();
+setupPricingCalculator();
 updateTicker();
 
 window.addEventListener("scroll", updateTicker, { passive: true });

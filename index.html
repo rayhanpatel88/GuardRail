@@ -65,6 +65,7 @@
               <a href="#services">Doctrine</a>
               <a href="#frameworks">Evidence</a>
               <a href="#founder">Founder</a>
+              <a href="#pricing">Pricing</a>
             </div>
           </div>
           <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
@@ -77,6 +78,7 @@
           <a href="#services">Doctrine</a>
           <a href="#frameworks">Evidence</a>
           <a href="#founder">Founder</a>
+          <a href="#pricing">Pricing</a>
           <a href="https://calendly.com/rayhanpatel88/30min" target="_blank" rel="noopener">Request Briefing</a>
         </div>
 
@@ -347,6 +349,129 @@
         </div>
       </section>
 
+      <section class="calculator-section" id="pricing">
+        <div class="calc-wrap">
+          <div class="calc-header reveal">
+            <p class="section-kicker">Engagement Cost Estimator</p>
+            <h2 class="section-title">Institutional-grade AI governance<br>within your budget.</h2>
+          </div>
+          <div class="calc-grid reveal" data-delay="120" data-y="24">
+
+            <!-- LEFT: Form -->
+            <div class="calc-form">
+
+              <!-- Service Type -->
+              <div class="calc-form-block">
+                <h3 class="calc-block-title">What kind of engagement do you need?</h3>
+                <div class="calc-radios" id="calcServiceType">
+                  <div class="calc-radio-item" data-value="audit">
+                    <span class="calc-radio-dot"></span>
+                    <div class="calc-radio-labels">
+                      <span class="calc-radio-name">Audit Only</span>
+                      <span class="calc-radio-desc">Algorithmic audit &amp; model validation</span>
+                    </div>
+                  </div>
+                  <div class="calc-radio-item" data-value="regulatory">
+                    <span class="calc-radio-dot"></span>
+                    <div class="calc-radio-labels">
+                      <span class="calc-radio-name">Regulatory Alignment</span>
+                      <span class="calc-radio-desc">Compliance documentation &amp; data lineage mapping</span>
+                    </div>
+                  </div>
+                  <div class="calc-radio-item is-selected" data-value="both">
+                    <span class="calc-radio-dot"></span>
+                    <div class="calc-radio-labels">
+                      <span class="calc-radio-name">Full Governance Suite</span>
+                      <span class="calc-radio-desc">Audit + Regulatory Alignment — most comprehensive</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Model count slider -->
+              <div class="calc-form-block">
+                <h3 class="calc-block-title">Models or pipelines in scope: <span class="calc-highlight" id="calcModelCount">5</span></h3>
+                <div class="calc-slider-wrap">
+                  <input type="range" id="calcSlider" class="calc-slider" min="1" max="20" step="1" value="5" />
+                  <div class="calc-slider-ends">
+                    <span>1</span><span>20</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Add-ons -->
+              <div class="calc-form-block">
+                <h3 class="calc-block-title">Enterprise add-ons</h3>
+                <div class="calc-checks">
+                  <div class="calc-check-item" id="calcTraining">
+                    <span class="calc-checkbox-dot"></span>
+                    <span class="calc-check-label">Include employee training sessions</span>
+                    <span class="calc-check-price">+$150/model</span>
+                  </div>
+                  <div class="calc-check-item" id="calcMonitoring">
+                    <span class="calc-checkbox-dot"></span>
+                    <span class="calc-check-label">Add continuous API monitoring</span>
+                    <span class="calc-check-price">+$200/model</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline -->
+              <div class="calc-form-block">
+                <h3 class="calc-block-title">How quickly do you need this?</h3>
+                <div class="calc-radios" id="calcTimeline">
+                  <div class="calc-radio-item" data-value="urgent">
+                    <span class="calc-radio-dot"></span>
+                    <div class="calc-radio-labels">
+                      <span class="calc-radio-name">Urgent (within 2 weeks)</span>
+                    </div>
+                    <span class="calc-check-price">+$100/model</span>
+                  </div>
+                  <div class="calc-radio-item" data-value="priority">
+                    <span class="calc-radio-dot"></span>
+                    <div class="calc-radio-labels">
+                      <span class="calc-radio-name">Priority (within 4 weeks)</span>
+                    </div>
+                    <span class="calc-check-price">+$50/model</span>
+                  </div>
+                  <div class="calc-radio-item is-selected" data-value="standard">
+                    <span class="calc-radio-dot"></span>
+                    <div class="calc-radio-labels">
+                      <span class="calc-radio-name">Standard (aligned to your roadmap)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RIGHT: Results -->
+            <div class="calc-results">
+              <h3 class="calc-results-title">Estimated Engagement Cost</h3>
+              <p class="calc-results-desc">See how Govtelligence compares to what legacy consultants charge for the same scope of AI governance work.</p>
+              <div class="calc-cards">
+                <div class="calc-card calc-card-bigfour">
+                  <p class="calc-card-label">Big Four consultant charges minimum</p>
+                  <p class="calc-card-price" id="calcBigFourPrice">$57,000</p>
+                  <p class="calc-card-sub">+ Inflated retainers, slow delivery, and no real AI ownership</p>
+                </div>
+                <div class="calc-card calc-card-boutique">
+                  <p class="calc-card-label">Mid-tier boutique charges minimum</p>
+                  <p class="calc-card-price" id="calcBoutiquePrice">$20,000</p>
+                  <p class="calc-card-sub">+ Generic playbooks with limited AI specialisation</p>
+                </div>
+                <div class="calc-card calc-card-guardrail">
+                  <p class="calc-card-label">With Govtelligence</p>
+                  <p class="calc-card-price" id="calcGuardrailPrice">$4,700</p>
+                  <p class="calc-card-sub">Founder-led precision. Institutional output. Real results.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section class="faq-cta-section" id="faq">
         <div class="cta-panel reveal">
           <h2>Turn AI risk into market trust.</h2>
@@ -441,6 +566,7 @@
                   <a href="#services">Services</a>
                   <a href="#frameworks">Frameworks</a>
                   <a href="#founder">Founder</a>
+                  <a href="#pricing">Pricing</a>
                   <a href="#faq">FAQ</a>
                 </div>
                 <div class="ef-col">
