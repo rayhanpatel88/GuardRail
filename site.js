@@ -111,8 +111,9 @@ function updateTicker() {
   const rows = document.querySelectorAll(".ticker-row");
   rows.forEach((row, index) => {
     const direction = row.dataset.direction === "right" ? 1 : -1;
-    const offset = (window.scrollY * 0.18 + index * 80) * direction;
-    row.style.transform = `translateX(${offset - 160}px)`;
+    const scrollOffset = (window.scrollY * 0.18 + index * 80) * direction;
+    const centerOffset = (window.innerWidth - row.scrollWidth) / 2;
+    row.style.transform = `translateX(${centerOffset + scrollOffset}px)`;
   });
 }
 
