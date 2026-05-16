@@ -1951,6 +1951,30 @@ body.menu-open {
   line-height: 1;
 }
 
+.ef-badge-mark-img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  transform: rotate(10deg);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+}
+
+.ef-right-video-wrap {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  aspect-ratio: 16 / 7;
+  position: relative;
+}
+
+.ef-right-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .ef-badge-text-row {
   display: flex;
   align-items: center;
