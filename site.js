@@ -34,6 +34,7 @@ function setupMobileMenu() {
   const setOpen = (open) => {
     button.classList.toggle("is-open", open);
     menu.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
     button.setAttribute("aria-expanded", String(open));
   };
 
@@ -42,6 +43,24 @@ function setupMobileMenu() {
   window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") setOpen(false);
   });
+}
+
+function setupHeroVideo() {
+  const video = document.querySelector(".hero-video");
+  if (!video) return;
+
+  const hlsSrc = video.dataset.hlsSrc;
+  if (!hlsSrc) return;
+
+  if (window.Hls && window.Hls.isSupported()) {
+    const hls = new window.Hls({ enableWorker: false });
+    hls.loadSource(hlsSrc);
+    hls.attachMedia(video);
+  } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    video.src = hlsSrc;
+  }
+
+  video.play().catch(() => {});
 }
 
 function setupFaq() {
@@ -120,6 +139,7 @@ function setupFooterWatermark() {
 }
 
 setupReveal();
+setupHeroVideo();
 setupMobileMenu();
 setupFaq();
 setupMagnetic();

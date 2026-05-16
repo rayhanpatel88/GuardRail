@@ -6,7 +6,7 @@
     <title>Govtelligence — AI Governance & Compliance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./site.css" />
   </head>
   <body>
@@ -14,12 +14,23 @@
       <section class="hero-section" id="home">
         <video
           class="hero-video"
+          data-hls-src="https://stream.mux.com/tLkHO1qZoaaQOUeVWo8hEBeGQfySP02EPS02BmnNFyXys.m3u8"
           src="./assets/video/govtelligence-hero.mp4"
           autoplay
           loop
           muted
           playsinline
         ></video>
+        <div class="hero-grid-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+        <svg class="hero-glow" viewBox="0 0 900 260" aria-hidden="true">
+          <defs>
+            <filter id="heroGlowBlur" x="-20%" y="-80%" width="140%" height="260%">
+              <feGaussianBlur stdDeviation="25" />
+            </filter>
+          </defs>
+          <ellipse cx="450" cy="130" rx="330" ry="48" fill="rgba(214,168,79,0.32)" filter="url(#heroGlowBlur)" />
+          <ellipse cx="450" cy="128" rx="260" ry="32" fill="rgba(125,211,252,0.14)" filter="url(#heroGlowBlur)" />
+        </svg>
         <div class="hero-overlay"></div>
 
         <nav class="nav-shell reveal" data-y="-18">
@@ -28,63 +39,49 @@
             <span class="brand-word">Govtelligence</span>
           </a>
           <div class="nav-links">
-            <a href="#matrix">Risk Matrix</a>
-            <a href="#services">Services</a>
-            <a href="#frameworks">Frameworks</a>
+            <a href="#matrix">Matrix</a>
+            <a href="#services">Doctrine</a>
+            <a href="#frameworks">Evidence</a>
             <a href="#founder">Founder</a>
-            <a href="#faq">FAQ</a>
           </div>
-          <a class="nav-cta magnetic" href="#contact" data-strength="8">Request Assessment</a>
+          <a class="nav-cta magnetic" href="#contact" data-strength="8">Request Briefing</a>
           <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
             <span></span><span></span>
           </button>
         </nav>
 
         <div class="mobile-menu" id="mobileMenu">
-          <a href="#matrix">Risk Matrix</a>
-          <a href="#services">Services</a>
-          <a href="#frameworks">Frameworks</a>
+          <a href="#matrix">Matrix</a>
+          <a href="#services">Doctrine</a>
+          <a href="#frameworks">Evidence</a>
           <a href="#founder">Founder</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Request Assessment</a>
+          <a href="#contact">Request Briefing</a>
         </div>
 
         <div class="hero-stage">
-          <p class="hero-eyebrow reveal" data-delay="100" data-y="18">Institutional intelligence for AI oversight</p>
+          <div class="liquid-card reveal" data-delay="120" data-y="18">
+            <span>[ 2026 ]</span>
+            <h2>Briefed for <em>Institutional</em> Leaders</h2>
+            <p>Governance intelligence for boards, legal teams, and AI risk owners.</p>
+          </div>
 
-          <div class="hero-words-group">
-            <div class="hero-crest reveal" data-delay="130" data-y="18">
-              <img src="./assets/brand/govtelligence/govtelligence-mark-transparent.png" alt="" />
-              <span>AI Governance &amp; Compliance</span>
+          <div class="hero-copy-block">
+            <p class="hero-eyebrow reveal" data-delay="170" data-y="18">Board-Ready AI Oversight</p>
+            <h1 class="hero-main-title reveal" data-delay="240" data-y="24">
+              Govern AI With Institutional Intelligence<span>.</span>
+            </h1>
+            <p class="hero-description reveal" data-delay="340" data-y="18">
+              Convert model risk, data lineage, and regulatory uncertainty into defensible evidence your executives can act on.
+            </p>
+            <div class="hero-action-panel reveal" data-delay="440" data-y="18">
+              <a class="primary-button magnetic" href="#contact" data-strength="7">
+                Request Briefing
+                <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
             </div>
-            <h1 class="hero-brand-title reveal" data-delay="170" data-y="24">Govtelligence</h1>
           </div>
-
-          <p class="hero-floating-copy reveal" data-delay="440" data-y="18">
-            A sharper command layer for AI risk: board evidence, model assurance, policy intelligence, and live controls with the calm authority of an institution.
-          </p>
-
-          <div class="hero-stat hero-stat-top reveal" data-delay="500" data-y="18">
-            <div><i></i><strong>94%</strong></div>
-            <span>evidence coverage target</span>
-          </div>
-
-          <div class="hero-stat hero-stat-left reveal" data-delay="580" data-y="18">
-            <div><strong>0.18%</strong><i></i></div>
-            <span>model drift threshold</span>
-          </div>
-
-          <div class="hero-stat hero-stat-right reveal" data-delay="660" data-y="18">
-            <div><i></i><strong>17</strong></div>
-            <span>shadow AI systems mapped</span>
-          </div>
-
-          <div class="hero-action-panel reveal" data-delay="720" data-y="18">
-            <a class="primary-button magnetic" href="#contact" data-strength="7">Request Intelligence Briefing</a>
-            <a class="ghost-button" href="#services">Explore doctrine</a>
-          </div>
-
-          <div class="hero-bottom-fade"></div>
         </div>
       </section>
 
@@ -424,6 +421,7 @@
         </div>
       </footer>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
     <script src="./site.js"></script>
   </body>
 </html>
